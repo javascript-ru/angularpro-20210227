@@ -15,12 +15,21 @@ export class AppComponent {
   output1:string = '';
   output2:string = '';
 
+  constructor() {}
+
+
   randomNumber() {
     this.output1 = Math.random().toString();
   }
 
   findBigPrime() {
-    this.output2 = find_big_prime().toString();
+    //this.output2 = find_big_prime().toString();
+    const worker = new Worker('./my-worker.worker', { type: 'module'});
+    worker.onmessage = ( {data} ) => {
+      this.output2 = data;
+      worker.terminate();
+    }
+    worker.postMessage('hello');
   }
 
 }

@@ -14,3 +14,5 @@
 
 
 5. unit tests with onPush: нельзя вызывать несколько раз CD
+https://stackoverflow.com/questions/50137734/detectchanges-not-working-within-angular-test
+https://github.com/angular/angular/issues/12313
