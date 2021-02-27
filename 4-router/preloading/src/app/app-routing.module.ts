@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MypreloadingService } from './mypreloading.service';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'lazy', 
+    data: {
+      nopreload: true
+    },
+    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) 
+}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: MypreloadingService})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

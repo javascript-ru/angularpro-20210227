@@ -8,3 +8,6 @@
 
 
 3. ngAfterViewInit in Angular Element
+
+
+4. Есть какой то способ уничтожать сервис после использования?

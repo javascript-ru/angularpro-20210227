@@ -8,13 +8,12 @@ import { myAnimation3 } from './animations/3';
   selector: "app-root",
   template: `
     <app-nav-bar></app-nav-bar>
-    <!-- <main [@myAnimation]="getRouterOutletState(o)"> -->
-    <main>
+    <main [@myAnimation]="getRouterOutletState(o)">
       <router-outlet #o="outlet"></router-outlet>
     </main>
   `,
   styleUrls: ["./app.component.scss"],
-  // animations: [myAnimation1]
+  animations: [myAnimation3]
 })
 export class AppComponent {
   public getRouterOutletState(outlet: RouterOutlet) {
