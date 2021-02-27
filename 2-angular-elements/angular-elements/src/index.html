@@ -8,6 +8,22 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <!-- <my-hello name="John"></my-hello>
+  <my-hello name="Jack"></my-hello> -->
+  <my-hello name="Alice">
+    Something is here!
+  </my-hello>
+
+
+  <script>
+    const el = document.querySelector('my-hello');
+    el.addEventListener('clicked', event => console.log(event.detail))
+    //el.innerHTML = 'Something else!'
+
+    setTimeout(() => {
+      el.innerHTML = 'Something else!'
+    }, 2000)
+
+  </script>
 </body>
 </html>
