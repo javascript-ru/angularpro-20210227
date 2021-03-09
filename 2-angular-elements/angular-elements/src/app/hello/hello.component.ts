@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -13,7 +13,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
   ],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class HelloComponent implements OnInit {
+export class HelloComponent implements OnInit, AfterViewInit {
 
   @Input() name?: string;
   @Output() clicked = new EventEmitter();
@@ -21,6 +21,11 @@ export class HelloComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    console.log('HelloComponent::ngAfterViewInit')
+
   }
 
 }

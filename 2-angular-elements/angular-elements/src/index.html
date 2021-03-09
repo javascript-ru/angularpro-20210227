@@ -22,7 +22,13 @@
 
     setTimeout(() => {
       el.innerHTML = 'Something else!'
-    }, 2000)
+    }, 2000);
+
+    setTimeout(() => {
+      const newHelloElement = document.createElement('my-hello');
+      newHelloElement.setAttribute('name', 'Mark')
+      document.body.appendChild(newHelloElement);
+    }, 5000);
 
   </script>
 </body>

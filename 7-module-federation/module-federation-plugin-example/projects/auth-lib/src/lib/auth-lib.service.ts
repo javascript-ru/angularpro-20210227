@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthLibService {
 
-  private userName: string = '';
+  private userName: string;
 
   public get user(): string {
       return this.userName;
@@ -17,5 +17,4 @@ export class AuthLibService {
       // Authentication for **honest** users TM. (c) Manfred Steyer
       this.userName = userName;
   }
-
 }

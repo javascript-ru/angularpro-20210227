@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'shell';
 
   constructor(private service: AuthLibService) {
-    this.service.login('Stepan', '');
-}
+    this.service.login('Jack', null);
+  }
 }
 
